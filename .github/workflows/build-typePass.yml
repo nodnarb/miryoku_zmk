@@ -1,0 +1,16 @@
+﻿# Copyright 2023 Brandon Dorris
+# https://github.com/nodnarb/miryoku_zmk/
+
+name: 'Build typePass'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["corne_left","corne_right"]'
+      alphas: 'QWERTY'
+      clipboard: 'Win'
+      layers: 'flip'
+      kconfig: '["CONFIG_ZMK_DISPLAY=n"]'
